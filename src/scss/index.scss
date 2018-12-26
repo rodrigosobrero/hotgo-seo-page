@@ -1,0 +1,37 @@
+$accent-color:      #ff4040;
+$dark-color:        #1b1e21;
+$default-color:     #ffffff;
+$text-color:        #ffffff;
+$light-blue-color:  #a7d0ff;
+$green-color:       #baff8e;
+
+$font-stack: 'Lato', sans-serif;
+
+body {
+  background-color: $dark-color;
+  color: $text-color;
+  font-family: $font-stack;
+}
+
+.btn-danger { 
+  background-color: $accent-color;
+  border-color: $accent-color;
+}
+
+.tag {
+  border-radius: 3px;
+  border: 1px solid;
+  height: 25px;
+  padding: 3px 10px;
+}
+
+@mixin tag ($color) {
+  border-color: $color;
+  color: $color;
+}
+
+.cast { @include tag($accent-color); }
+
+.seasons { @include tag($green-color); }
+
+.episodes { @include tag($light-blue-color); }
