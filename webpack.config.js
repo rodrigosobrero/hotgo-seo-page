@@ -5,8 +5,9 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
   mode: 'development',
+  // mode: 'production',
   output: {
-    filename: 'js/[name].js'
+    filename: 'js/[name]-min.js'
   },
   optimization: {
     minimizer: [

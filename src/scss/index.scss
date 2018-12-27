@@ -18,6 +18,14 @@ body {
   border-color: $accent-color;
 }
 
+.card-episodes {
+  background-color: transparent !important;
+  border: none !important;
+  .card-body {
+    padding: 1.25rem 0;
+  }
+}
+
 .tag {
   border-radius: 3px;
   border: 1px solid;
