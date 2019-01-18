@@ -1,11 +1,16 @@
 import './scss/index.scss';
 import logo from './img/hotgo-logo.svg';
+import logoMin from './img/hotgo-logo-min.svg';
 import thumb from './img/video-thumb.svg';
-import title from './img/video-title.svg';
+import play from './img/video-play-icon.png';
+import preview from './img/video-preview.png';
 
 document.getElementById('navbar-logo').src = logo;
-document.getElementById('video-title').src = title;
-document.getElementById('video-thumb').src = thumb; 
+document.getElementById('navbar-logo-min').src = logoMin;
+document.getElementById('navbar-logo-min').style.height = '30px';
+document.getElementById('video-preview').src = preview;
+document.getElementById('video-play').src = play;
+document.getElementById('video-thumb-series').src = thumb;
 
 let episodeList = [
                     { title: 'Capítulo', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' },
@@ -19,8 +24,8 @@ let episodeList = [
                   ];
 
 let episodeCard = prm => {
-  return `<div class="col-auto float-left mb-4">
-            <div class="card card-episodes" style="width:15rem;">
+  return `<div class="col-xs-6 col-md-3 float-left mb-4">
+            <div class="card card-episodes">
               <img src="${prm.thumb}" class="card-img-top">
               <div class="card-body">
                 <h5 class="card-title">${prm.title} ${prm.episode}</h5>

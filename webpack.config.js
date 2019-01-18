@@ -6,8 +6,12 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 module.exports = {
   mode: 'development',
   // mode: 'production',
+  entry: {
+    index: './src/index.js',
+    category: './src/category.js'
+  },
   output: {
-    filename: 'js/[name]-min.js'
+    filename: 'js/[name].bundle.js'
   },
   optimization: {
     minimizer: [
@@ -21,7 +25,14 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'HotGo',
       template: './index.html',
-      filename: 'index.html'
+      filename: 'index.html',
+      chunks: ['index']
+    }),
+    new HtmlWebpackPlugin({
+      title: 'HotGo',
+      template: './category.html',
+      filename: 'category.html',
+      chunks: ['category']
     }),
     new MiniCSSExtractPlugin({
       filename: 'css/[name]-min.css'
@@ -43,7 +54,7 @@ module.exports = {
           loader: 'url-loader',
           options: {
             limit: 8000,
-            name: 'img/[hash]-[name].[ext]'
+            name: 'img/[name].[ext]'
           }
         }]
       }
