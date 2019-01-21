@@ -8,7 +8,8 @@ module.exports = {
   // mode: 'production',
   entry: {
     index: './src/index.js',
-    category: './src/category.js'
+    category: './src/category.js',
+    actor: './src/actor.js'
   },
   output: {
     filename: 'js/[name].bundle.js'
@@ -23,19 +24,25 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'HotGo',
+      title: 'Detalle',
       template: './index.html',
       filename: 'index.html',
       chunks: ['index']
     }),
     new HtmlWebpackPlugin({
-      title: 'HotGo',
+      title: 'Categoría',
       template: './category.html',
       filename: 'category.html',
       chunks: ['category']
     }),
+    new HtmlWebpackPlugin({
+      title: 'Actor',
+      template: './actor.html',
+      filename: 'actor.html',
+      chunks: ['actor']
+    }),
     new MiniCSSExtractPlugin({
-      filename: 'css/[name]-min.css'
+      filename: 'css/[name].min.css'
     })
   ],
   module: {
