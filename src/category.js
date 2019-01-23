@@ -1,6 +1,6 @@
 import './scss/index.scss';
-import thumb from './img/009948.jpg';
 import logo from './img/hotgo-logo.svg';
+import thumb from './img/video-thumb.jpg';
 
 document.getElementById('navbar-logo').src = logo;
 document.getElementById('thumb').src = thumb;
@@ -72,7 +72,7 @@ categoryList.forEach(element => {
 });
 
 $(document).ready(function () {
-  $('#dismiss, .overlay').on('click', () => {
+  $('#dismiss').on('click', () => {
     if ($('#dismiss').hasClass('is-active')) {
       $('#sidebar, .overlay').removeClass('active');
       $('#dismiss').removeClass('is-active');

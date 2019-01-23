@@ -8,8 +8,8 @@ module.exports = {
   // mode: 'production',
   entry: {
     index: './src/index.js',
-    category: './src/category.js',
-    actor: './src/actor.js'
+    actor: './src/actor.js',
+    category: './src/category.js'
   },
   output: {
     filename: 'js/[name].bundle.js'
